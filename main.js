@@ -68,53 +68,77 @@ function init() {
 }
 
 function showQuestions() {
-
-
-    if (currentQuestion >= questions.length) {
-        //Show Endscreen
-        document.getElementById('end-screen').style = '';
-        document.getElementById('question-body').style = 'display: none;';
-
-        document.getElementById('amount-of-questions').innerHTML = questions.length;
-        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
-        document.getElementById('header-image').src = ('QuizappImg/tropy.png');
-    } else { // Show Question
-        let percent = (currentQuestion + 1) / questions.length;
-
-        percent = Math.round(percent * 100);
-
-        document.getElementById('progess-bar').innerHTML = `${percent} %`;
-        document.getElementById('progess-bar').style = `width: ${percent}%;`;
-
-        let question = questions[currentQuestion];
-
-        document.getElementById('question-number').innerHTML = currentQuestion + 1;
-        document.getElementById('question-text').innerHTML = question['question'];
-        document.getElementById('answer_1').innerHTML = question['answer_1'];
-        document.getElementById('answer_2').innerHTML = question['answer_2'];
-        document.getElementById('answer_3').innerHTML = question['answer_3'];
-        document.getElementById('answer_4').innerHTML = question['answer_4'];
+    if (gameIsOver()) {
+        showEndScreen();
+    } else {
+        updateProgressbar();
+        updateToNextQuestion();
     }
 }
+
+function gameIsOver() {
+    currentQuestion >= questions.length;
+}
+
+function showEndScreen() {
+    document.getElementById('end-screen').style = '';
+    document.getElementById('question-body').style = 'display: none;';
+    document.getElementById('amount-of-questions').innerHTML = questions.length;
+    document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+    document.getElementById('header-image').src = ('QuizappImg/tropy.png');
+}
+
+function updateProgressbar() {
+    let percent = (currentQuestion + 1) / questions.length;
+    percent = Math.round(percent * 100);
+
+    document.getElementById('progess-bar').innerHTML = `${percent} %`;
+    document.getElementById('progess-bar').style = `width: ${percent}%;`;
+}
+
+function updateToNextQuestion() {
+    let question = questions[currentQuestion];
+
+    document.getElementById('question-number').innerHTML = currentQuestion + 1;
+    document.getElementById('question-text').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+}
+
+
 
 function answer(selection) {
     let question = questions[currentQuestion];
-
     let selectedQuestionNumber = selection.slice(-1);
-
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
-    if (selectedQuestionNumber == question['right_answer']) {
-        document.getElementById(selection).parentNode.classList.add('bg-success');
-        AUDIO_SUCCESS.play();
-        rightQuestions++;
+    if (rightAnswerSelected(selectedQuestionNumber, question)) {
+        theAnswerIsRight(selection);
     } else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
-        AUDIO_FAIL.play();
+        theAnswerIswrong(selection, idOfRightAnswer);
     }
     document.getElementById('next-button').disabled = false;
 }
+
+function rightAnswerSelected(selectedQuestionNumber, question) {
+    return selectedQuestionNumber == question['right_answer']
+}
+
+function theAnswerIsRight(selection) {
+    document.getElementById(selection).parentNode.classList.add('bg-success');
+    AUDIO_SUCCESS.play();
+    rightQuestions++;
+}
+
+function theAnswerIswrong(selection, idOfRightAnswer) {
+    document.getElementById(selection).parentNode.classList.add('bg-danger');
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    AUDIO_FAIL.play();
+}
+
+
 
 function nextQuestion() {
     currentQuestion++; // zb von 0 auf 1
