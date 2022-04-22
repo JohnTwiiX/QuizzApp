@@ -88,3 +88,23 @@ function answer(selection) {
     }
     document.getElementById('next-button').disable = false;
 }
+
+function nextQuestion() {
+    currentQuestion++; // zb von 0 auf 1
+
+    document.getElementById('next-button').disable = true;
+
+    resetAnswerButtons();
+    showQuestions();
+}
+
+function resetAnswerButtons() {
+    document.getElementById('answer_1').parentNode.cloneNode.classList.remove('bg-success');
+    document.getElementById('answer_1').parentNode.cloneNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.cloneNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.cloneNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.cloneNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.cloneNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.cloneNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.cloneNode.classList.remove('bg-danger');
+}
