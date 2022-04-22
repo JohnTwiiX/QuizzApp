@@ -56,6 +56,7 @@ let questions = [{
     }
 ];
 
+let rightQuestions = 0;
 let currentQuestion = 0;
 
 function init() {
@@ -65,12 +66,33 @@ function init() {
 }
 
 function showQuestions() {
-    let question = questions[currentQuestion];
-    document.getElementById('question-text').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+
+
+    if (currentQuestion >= questions.length) {
+        //Show Endscreen
+        document.getElementById('end-screen').style = '';
+        document.getElementById('question-body').style = 'display: none;';
+
+        document.getElementById('amount-of-questions').innerHTML = questions.length;
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+        document.getElementById('header-image').src = ('QuizappImg/tropy.png');
+    } else { // Show Question
+        let percent = (currentQuestion + 1) / questions.length;
+
+        percent = Math.round(percent * 100);
+
+        document.getElementById('progess-bar').innerHTML = `${percent} %`;
+        document.getElementById('progess-bar').style = `width: ${percent}%;`;
+
+        let question = questions[currentQuestion];
+
+        document.getElementById('question-number').innerHTML = currentQuestion + 1;
+        document.getElementById('question-text').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 
 function answer(selection) {
@@ -82,6 +104,7 @@ function answer(selection) {
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
@@ -92,19 +115,29 @@ function answer(selection) {
 function nextQuestion() {
     currentQuestion++; // zb von 0 auf 1
 
-    document.getElementById('next-button').disable = true;
+    document.getElementById('next-button').disabled = true;
 
     resetAnswerButtons();
     showQuestions();
 }
 
 function resetAnswerButtons() {
-    document.getElementById('answer_1').parentNode.cloneNode.classList.remove('bg-success');
-    document.getElementById('answer_1').parentNode.cloneNode.classList.remove('bg-danger');
-    document.getElementById('answer_2').parentNode.cloneNode.classList.remove('bg-success');
-    document.getElementById('answer_2').parentNode.cloneNode.classList.remove('bg-danger');
-    document.getElementById('answer_3').parentNode.cloneNode.classList.remove('bg-success');
-    document.getElementById('answer_3').parentNode.cloneNode.classList.remove('bg-danger');
-    document.getElementById('answer_4').parentNode.cloneNode.classList.remove('bg-success');
-    document.getElementById('answer_4').parentNode.cloneNode.classList.remove('bg-danger');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
+}
+
+function restartGame() {
+    document.getElementById('header-image').src = 'QuizappImg/brainbg.jpg';
+    document.getElementById('end-screen').style = 'display: none;'; // Endscreen ausblenden
+    document.getElementById('question-body').style = ''; // Questionscreen wieder einblenden
+
+    rightQuestions = 0;
+    currentQuestion = 0;
+    init();
 }

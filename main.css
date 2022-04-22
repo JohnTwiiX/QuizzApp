@@ -30,3 +30,17 @@ body {
 .bg-danger {
     color: white;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}

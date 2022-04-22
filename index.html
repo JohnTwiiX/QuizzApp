@@ -24,8 +24,27 @@
 
     <div class="container">
         <div class="card quiz-card">
-            <img src="QuizappImg/brainbg.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
+            <img src="QuizappImg/brainbg.jpg" id="header-image" class="card-img-top" alt="...">
+
+            <div class="progress">
+                <div id="progess-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
+            </div>
+
+            <div class="card-body" id="end-screen" style="display: none;">
+                <div class="text-center">
+                    Quiz beendet!
+                </div>
+
+                <div class="text-center">
+                    Dust hast <b id="amount-of-right-questions">xxx</b> Fragen von <b id="amount-of-questions">xxx</b> richtig beantwortet.
+                </div>
+
+                <div class="button-row">
+                    <button onclick="restartGame()" class="btn btn-secondary" id="">Erneut spielen</button>
+                </div>
+            </div>
+
+            <div class="card-body" id="question-body">
                 <h5 class="card-title" id="question-text">Frage</h5>
 
                 <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
@@ -54,7 +73,7 @@
 
                 <div class="question-footer">
                     <span>
-                       <b>1</b> von <b id="all-questions">5</b> Fragen 
+                       <b id="question-number">1</b> von <b id="all-questions">5</b> Fragen 
                     </span>
 
                     <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button>
