@@ -16,20 +16,17 @@
 
 <body onload="init()">
 
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">QuizzApp</span>
-        </div>
-    </nav>
 
+    <!-- ########################################################################################################## GESAMTE QUIZZAPP ################################################################################################################### -->
     <div class="container">
         <div class="card quiz-card">
             <img src="QuizappImg/brainbg.jpg" id="header-image" class="card-img-top" alt="...">
 
-            <div class="progress">
+            <div class="progress" style="display: none;">
                 <div id="progess-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
             </div>
 
+            <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
             <div class="card-body" id="end-screen" style="display: none;">
                 <div class="text-center">
                     Quiz beendet!
@@ -44,7 +41,8 @@
                 </div>
             </div>
 
-            <div class="card-body" id="question-body">
+            <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
+            <div class="card-body" id="question-body" style="display: none;">
                 <h5 class="card-title" id="question-text">Frage</h5>
 
                 <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
@@ -78,11 +76,10 @@
 
                     <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button>
                 </div>
-
             </div>
         </div>
-
     </div>
+    <!-- ################################################################################################### QUIZZAPP ENDE ###################################################################################################################### -->
 
 </body>
 
