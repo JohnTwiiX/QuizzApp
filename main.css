@@ -51,24 +51,24 @@ body {
     background-position: center;
     justify-content: center;
     font-size: 30px;
-    padding: 0 200px 0px 200px;
+    width: 700px;
 }
 
 .left-bar-card {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 60px;
-    height: 100%;
+    width: 200px;
     background: rgb(0, 0, 86) !important;
-    color: white;
+    color: rgba(255, 255, 255, 0.507);
     font-size: 26px;
     padding-top: 24px;
 }
 
-.left-bar-card span {
-    margin-top: 24px;
-    margin-bottom: 24px;
+.leftbar-span {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 32px;
 }
 
 .left-bar-card img {
@@ -80,4 +80,59 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.title-span-start {
+    height: 80%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 20%;
+    margin-right: 32px;
+}
+
+.btn-container img {
+    height: 24px;
+    width: 21px;
+    margin-left: 24px;
+}
+
+.btn-start {
+    width: 200px;
+    background-color: rgb(255, 187, 41) !important;
+}
+
+.card-body-new-design {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding: 0px 100px 0px 100px !important;
+}
+
+.margin-b-32 {
+    margin-bottom: 32px !important;
+}
+
+.card-body-answer {
+    display: flex;
+    padding: 8px !important;
+    align-items: center;
+}
+
+.answer-icon {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(128 128 128 / 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 32px;
+    font-size: 24px;
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Quizzapp</title>
+    <title>Quizapp</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
@@ -27,30 +27,33 @@
                 <div class="left-bar-card">
                     <img src="QuizappImg/logo.png">
 
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JS</span>
-                    <span>Java</span>
+                    <div class="leftbar-span" style="border-left: 8px solid; color: white !important;">HTML</div>
+                    <div class="leftbar-span">CSS</div>
+                    <div class="leftbar-span">JS</div>
+                    <div class="leftbar-span">JAVA</div>
 
                 </div>
             </div>
 
-            <div class="card start-container">
-                <div class="title-span-start">
+            <div class="card start-container" style="display: none;">
+                <div class="title-span-start text-center">
                     <span>Welcome to <br>
                     The Awesome HTML Quiz
                     </span> <br>
-                    <span>Ready for the Challenge?</span>
+                    <span style="font-size: 20px;">Ready for the Challenge?</span>
                 </div>
+                <div class="btn-container">
+                    <button class="btn btn-warning btn-lg btn-start"><span style="color: white;">START NOW</span> <img src="QuizappImg/right.png"> </button>
+                </div>
+
             </div>
-            <!-- <img src="QuizappImg/brainbg.jpg" id="header-image" class="card-img-top" alt="..." style=""> -->
-            <div class="card quiz-card" style="display: none;">
+            <div class="card quiz-card" style="">
 
 
 
 
                 <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
-                <div class="card-body" id="end-screen" style="display: none;">
+                <div class="card-body" id="end-screen" style="">
                     <div class="text-center">
                         Quiz beendet!
                     </div>
@@ -65,43 +68,43 @@
                 </div>
 
                 <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
-                <div class="card-body" id="question-body" style="">
-                    <h5 class="card-title" id="question-text">Frage</h5>
+                <div class="card-body card-body-new-design" id="question-body" style="display: none;">
+                    <h5 class="card-title text-center margin-b-32" id="question-text">Frage</h5>
 
                     <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
-                        <div class="card-body" id="answer_1">
-                            Antwort
+                        <div class="card-body card-body-answer">
+                            <div class="answer-icon"><b>A</b></div> <span id="answer_1">Antwort</span>
                         </div>
                     </div>
 
                     <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
-                        <div class="card-body" id="answer_2">
-                            Antwort
+                        <div class="card-body card-body-answer">
+                            <div class="answer-icon"><b>B</b></div> <span id="answer_2">Antwort</span>
                         </div>
                     </div>
 
                     <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
-                        <div class="card-body" id="answer_3">
-                            Antwort
+                        <div class="card-body card-body-answer">
+                            <div class="answer-icon"><b>C</b></div> <span id="answer_3">Antwort</span>
                         </div>
                     </div>
 
                     <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
-                        <div class="card-body" id="answer_4">
-                            Antwort
+                        <div class="card-body card-body-answer">
+                            <div class="answer-icon"><b>D</b></div> <span id="answer_4">Antwort</span>
                         </div>
                     </div>
 
-                    <div class="question-footer">
+                    <!-- <div class="question-footer">
                         <span>
                        <b id="question-number">1</b> von <b id="all-questions">5</b> Fragen 
-                    </span>
+                    </span> -->
 
-                        <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button>
-                    </div>
+                    <!-- <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button> -->
                 </div>
             </div>
         </div>
+    </div>
 
 
     </div>

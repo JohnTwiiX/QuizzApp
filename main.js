@@ -62,7 +62,7 @@ let AUDIO_SUCCESS = new Audio('audio/success.mp3');
 let AUDIO_FAIL = new Audio('audio/fail.mp3');
 
 function init() {
-    document.getElementById('all-questions').innerHTML = questions.length;
+    // document.getElementById('all-questions').innerHTML = questions.length;
     document.getElementById('progess-bar').innerHTML = ` 0 %`;
     document.getElementById('progess-bar').style = `width: 0%;`;
 
