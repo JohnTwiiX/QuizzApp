@@ -18,65 +18,92 @@
 
     <!-- ########################################################################################################## GESAMTE QUIZZAPP ################################################################################################################### -->
     <div class="container">
-        <div class="card quiz-card">
-            <img src="QuizappImg/brainbg.jpg" id="header-image" class="card-img-top" alt="...">
+        <div class="progress progress-position-absolut">
+            <div id="progess-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
+        </div>
+        <div class="card" style="flex-direction: unset;">
 
-            <div class="progress" style="display: none;">
-                <div id="progess-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
-            </div>
+            <div class="">
+                <div class="left-bar-card">
+                    <img src="QuizappImg/logo.png">
 
-            <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
-            <div class="card-body" id="end-screen" style="display: none;">
-                <div class="text-center">
-                    Quiz beendet!
-                </div>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>Java</span>
 
-                <div class="text-center">
-                    Dust hast <b id="amount-of-right-questions">xxx</b> Fragen von <b id="amount-of-questions">xxx</b> richtig beantwortet.
-                </div>
-
-                <div class="button-row">
-                    <button onclick="restartGame()" class="btn btn-secondary" id="">Erneut spielen</button>
                 </div>
             </div>
 
-            <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
-            <div class="card-body" id="question-body" style="display: none;">
-                <h5 class="card-title" id="question-text">Frage</h5>
+            <div class="card start-container">
+                <div class="title-span-start">
+                    <span>Welcome to <br>
+                    The Awesome HTML Quiz
+                    </span> <br>
+                    <span>Ready for the Challenge?</span>
+                </div>
+            </div>
+            <!-- <img src="QuizappImg/brainbg.jpg" id="header-image" class="card-img-top" alt="..." style=""> -->
+            <div class="card quiz-card" style="display: none;">
 
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
-                    <div class="card-body" id="answer_1">
-                        Antwort
+
+
+
+                <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
+                <div class="card-body" id="end-screen" style="display: none;">
+                    <div class="text-center">
+                        Quiz beendet!
+                    </div>
+
+                    <div class="text-center">
+                        Dust hast <b id="amount-of-right-questions">xxx</b> Fragen von <b id="amount-of-questions">xxx</b> richtig beantwortet.
+                    </div>
+
+                    <div class="button-row">
+                        <button onclick="restartGame()" class="btn btn-secondary" id="">Erneut spielen</button>
                     </div>
                 </div>
 
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
-                    <div class="card-body" id="answer_2">
-                        Antwort
-                    </div>
-                </div>
+                <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
+                <div class="card-body" id="question-body" style="">
+                    <h5 class="card-title" id="question-text">Frage</h5>
 
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
-                    <div class="card-body" id="answer_3">
-                        Antwort
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                        <div class="card-body" id="answer_1">
+                            Antwort
+                        </div>
                     </div>
-                </div>
 
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
-                    <div class="card-body" id="answer_4">
-                        Antwort
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+                        <div class="card-body" id="answer_2">
+                            Antwort
+                        </div>
                     </div>
-                </div>
 
-                <div class="question-footer">
-                    <span>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
+                        <div class="card-body" id="answer_3">
+                            Antwort
+                        </div>
+                    </div>
+
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+                        <div class="card-body" id="answer_4">
+                            Antwort
+                        </div>
+                    </div>
+
+                    <div class="question-footer">
+                        <span>
                        <b id="question-number">1</b> von <b id="all-questions">5</b> Fragen 
                     </span>
 
-                    <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button>
+                        <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
     <!-- ################################################################################################### QUIZZAPP ENDE ###################################################################################################################### -->
 
