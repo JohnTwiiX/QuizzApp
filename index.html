@@ -22,13 +22,13 @@
             <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
         </div>
         <div>
-            <div class="card" style="flex-direction: unset;">
+            <div class="card flex-direction-card">
 
                 <div class="">
                     <div class="left-bar-card rubik">
                         <img src="QuizappImg/logo.png">
 
-                        <div class="leftbar-span" style="border-left: 8px solid; color: white !important;">HTML</div>
+                        <div class="leftbar-span border-left-span">HTML</div>
                         <div class="leftbar-span">CSS</div>
                         <div class="leftbar-span">JS</div>
                         <div class="leftbar-span">JAVA</div>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <div id="start-screen" class="card start-container pt-sans">
+                <div id="start-screen" class="card start-container pt-sans max-width">
                     <div class="title-span-start text-center">
                         <span><b>Welcome to</b> <br>
                     <b>The Awesome HTML Quiz</b>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div id="quiz-card-display" class="card quiz-card" style="display: none;">
+                <div id="quiz-card-display" class="card quiz-card max-width" style="display: none;">
                     <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
                     <div class="card-body endscreen-card rubik" id="end-screen" style="display: none;">
                         <img src="QuizappImg/brain result.png">
@@ -74,7 +74,7 @@
                     </div>
 
                     <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
-                    <div class="card-body card-body-new-design rubik" id="question-body">
+                    <div class="card-body card-body-new-design rubik max-width padding-null" id="question-body">
                         <h5 class="card-title text-center margin-b-32 " id="question-text">Frage</h5>
 
                         <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">

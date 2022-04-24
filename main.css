@@ -211,3 +211,53 @@ body {
     right: 0;
     top: 30vh;
 }
+
+.flex-direction-card {
+    flex-direction: unset !important;
+}
+
+.border-left-span {
+    border-left: 8px solid;
+    color: white !important;
+}
+
+@media(max-width: 950px) {
+    .left-bar-card {
+        flex-direction: unset;
+        width: 100%;
+        padding: 0;
+    }
+    .left-bar-card img {
+        height: 50px;
+        margin: 8px;
+    }
+    .max-width {
+        max-width: 400px;
+    }
+    .padding-null {
+        padding: 0 !important;
+    }
+    .flex-direction-card {
+        flex-direction: column !important;
+    }
+    .slide-btn {
+        margin: 8px 0 0 0;
+    }
+    .leftbar-span {
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+    .border-left-span {
+        border-left: unset;
+        border-bottom: 4px solid;
+    }
+}
+
+@media(max-width: 400px) {
+    .max-width {
+        max-width: 250px;
+    }
+    .trophy-img {
+        display: none !important;
+    }
+}

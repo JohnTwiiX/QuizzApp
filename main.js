@@ -35,7 +35,7 @@ let questions = [{
         "answer_1": "Ist eine Sprache, um Elemente im HTML zu beschreiben",
         "answer_2": "Wird genutzt um Wasser zum Kochen zu bringen",
         "answer_3": "Wird genutzt um die Schulnoten der Schüler zu bestimmen",
-        "answer_4": "Is eine Sprache der Ägypter",
+        "answer_4": "Ist eine Sprache der Ägypter",
         "right_answer": 1
     },
     {
