@@ -96,6 +96,7 @@ function showEndScreen() {
     document.getElementById('slide-btn').style = 'display: none;';
     document.getElementById('end-screen').style = '';
     document.getElementById('question-body').style = 'display: none;';
+    document.getElementById('trophy-img').style = '';
     document.getElementById('amount-of-questions').innerHTML = questions.length;
     document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
     // document.getElementById('header-image').src = ('QuizappImg/tropy.png');
@@ -202,6 +203,7 @@ function restartGame() {
     document.getElementById('end-screen').style = 'display: none;'; // Endscreen ausblenden
     document.getElementById('question-body').style = ''; // Questionscreen wieder einblenden
     document.getElementById('slide-btn').style = '';
+    document.getElementById('trophy-img').style = 'display: none;';
     document.getElementById('progress-bar').innerHTML = `0 %`;
     document.getElementById('progress-bar').style = `width: 0%;`;
 
