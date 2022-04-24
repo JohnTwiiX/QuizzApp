@@ -165,3 +165,43 @@ body {
 .rubik {
     font-family: 'Rubik', sans-serif;
 }
+
+.slide-btn {
+    margin: 16px 0 0 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.slide-rl-container {
+    background: grey;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.slide-btn img {
+    height: 24px;
+    width: 24px;
+}
+
+.bg-success-color {
+    background: rgb(36 217 36 / 58%) !important;
+}
+
+.bg-success-color-icon {
+    background: rgb(36 217 36 / 100%) !important;
+    color: white;
+}
+
+.bg-danger-color {
+    background: rgb(255 64 64 / 77%) !important;
+}
+
+.bg-danger-color-icon {
+    background: rgb(255 64 64 / 100%) !important;
+    color: white;
+}

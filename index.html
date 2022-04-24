@@ -18,110 +18,114 @@
 
     <!-- ########################################################################################################## GESAMTE QUIZZAPP ################################################################################################################### -->
     <div class="container">
-        <div class="progress progress-position-absolut">
-            <div id="progess-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
+        <div class="progress progress-position-absolut" id="progress-bar-display" style="display: none;">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 25%;">25%</div>
         </div>
-        <div class="card" style="flex-direction: unset;">
+        <div>
+            <div class="card" style="flex-direction: unset;">
 
-            <div class="">
-                <div class="left-bar-card rubik">
-                    <img src="QuizappImg/logo.png">
+                <div class="">
+                    <div class="left-bar-card rubik">
+                        <img src="QuizappImg/logo.png">
 
-                    <div class="leftbar-span" style="border-left: 8px solid; color: white !important;">HTML</div>
-                    <div class="leftbar-span">CSS</div>
-                    <div class="leftbar-span">JS</div>
-                    <div class="leftbar-span">JAVA</div>
+                        <div class="leftbar-span" style="border-left: 8px solid; color: white !important;">HTML</div>
+                        <div class="leftbar-span">CSS</div>
+                        <div class="leftbar-span">JS</div>
+                        <div class="leftbar-span">JAVA</div>
 
+                    </div>
                 </div>
-            </div>
 
-            <div class="card start-container pt-sans" style="display: none;">
-                <div class="title-span-start text-center">
-                    <span><b>Welcome to</b> <br>
+                <div id="start-screen" class="card start-container pt-sans">
+                    <div class="title-span-start text-center">
+                        <span><b>Welcome to</b> <br>
                     <b>The Awesome HTML Quiz</b>
                     </span> <br>
-                    <span style="font-size: 20px;">Ready for the Challenge?</span>
-                </div>
-                <div class="btn-container">
-                    <button class="btn btn-warning btn-lg btn-start"><span style="color: white;">START NOW</span> <img src="QuizappImg/right.png"> </button>
-                </div>
-
-            </div>
-            <div class="card quiz-card" style="">
-
-
-
-
-                <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
-                <div class="card-body endscreen-card rubik" id="end-screen" style="">
-                    <img src="QuizappImg/brain result.png">
-                    <div>
-                        <span><b>COMPLETE</b></span><br>
-                        <span><b>HTML QUIZ</b></span>
+                        <span style="font-size: 20px;">Ready for the Challenge?</span>
                     </div>
-                    <span style="margin: 24px 0 24px 0;"><b style="color: rgb(255, 187, 41);">YOUR SCORE</b> <b>xxx</b><b>/</b><b>xxx</b></span>
-                    <button class="btn btn-primary btn-share">SHARE</button>
-                    <button class="btn btn-replay">REPLAY</button>
+                    <div class="btn-container">
+                        <button onclick="startGame()" class="btn btn-warning btn-lg btn-start"><span style="color: white;">START NOW</span> <img src="QuizappImg/right.png"> </button>
+                    </div>
+                </div>
 
+                <div id="quiz-card-display" class="card quiz-card " style="display: none; ">
+                    <!-- ############################################################################################## ENDSCREEN ####################################################################################################################### -->
+                    <div class="card-body endscreen-card rubik" id="end-screen" style="display: none;">
+                        <img src="QuizappImg/brain result.png">
+                        <div>
+                            <span><b>COMPLETE</b></span><br>
+                            <span><b>HTML QUIZ</b></span>
+                        </div>
+                        <span style="margin: 24px 0 24px 0;"><b style="color: rgb(255, 187, 41);">YOUR SCORE</b> <b id="amount-of-right-questions">xxx</b><b>/</b><b id="amount-of-questions">xxx</b></span>
+                        <button class="btn btn-primary btn-share ">SHARE</button>
+                        <button onclick="restartGame()" class="btn btn-replay">REPLAY</button>
 
-
-
-
-
-
-
-
-
-                    <!-- <div class="text-center">
+                        <!-- <div class="text-center ">
                         Quiz beendet!
                     </div>
 
-                    <div class="text-center">
-                        Dust hast <b id="amount-of-right-questions">xxx</b> Fragen von <b id="amount-of-questions">xxx</b> richtig beantwortet.
+                    <div class="text-center ">
+                        Dust hast <b id="amount-of-right-questions ">xxx</b> Fragen von <b id="amount-of-questions ">xxx</b> richtig beantwortet.
                     </div>
 
-                    <div class="button-row">
-                        <button onclick="restartGame()" class="btn btn-secondary" id="">Erneut spielen</button>
+                    <div class="button-row ">
+                        <button onclick="restartGame() " class="btn btn-secondary " id=" ">Erneut spielen</button>
                     </div> -->
-                </div>
-
-                <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
-                <div class="card-body card-body-new-design rubik" id="question-body" style="display: none;">
-                    <h5 class="card-title text-center margin-b-32" id="question-text">Frage</h5>
-
-                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
-                        <div class="card-body card-body-answer">
-                            <div class="answer-icon"><b>A</b></div> <span id="answer_1">Antwort</span>
-                        </div>
                     </div>
 
-                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
-                        <div class="card-body card-body-answer">
-                            <div class="answer-icon"><b>B</b></div> <span id="answer_2">Antwort</span>
+                    <!-- ############################################################################################ QUIZZAPP FRAGE SCREEN #################################################################################################################### -->
+                    <div class="card-body card-body-new-design rubik" id="question-body">
+                        <h5 class="card-title text-center margin-b-32 " id="question-text">Frage</h5>
+
+                        <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                            <div class="card-body card-body-answer">
+                                <div class="answer-icon"><b>A</b></div>
+                                <div id="answer_1">Antwort</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
-                        <div class="card-body card-body-answer">
-                            <div class="answer-icon"><b>C</b></div> <span id="answer_3">Antwort</span>
+                        <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+                            <div class="card-body card-body-answer">
+                                <div class="answer-icon"><b>B</b></div> <span id="answer_2">Antwort</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
-                        <div class="card-body card-body-answer">
-                            <div class="answer-icon"><b>D</b></div> <span id="answer_4">Antwort</span>
+                        <div class="card quiz-answer-card mb-2" onclick="answer('answer_3') ">
+                            <div class="card-body card-body-answer ">
+                                <div class="answer-icon"><b>C</b></div> <span id="answer_3">Antwort</span>
+                            </div>
                         </div>
+
+                        <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+                            <div class="card-body card-body-answer">
+                                <div class="answer-icon "><b>D</b></div> <span id="answer_4">Antwort</span>
+                            </div>
+                        </div>
+
+                        <!-- <div class="question-footer">
+                                     <span>
+                                     <b id="question-number">1</b> von <b id="all-questions ">5</b> Fragen 
+                                     </span> -->
+
+                        <!-- <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button> -->
                     </div>
-
-                    <!-- <div class="question-footer">
-                        <span>
-                       <b id="question-number">1</b> von <b id="all-questions">5</b> Fragen 
-                    </span> -->
-
-                    <!-- <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>Nächste Frage</button> -->
                 </div>
             </div>
+            <div id="slide-btn" class="slide-btn" style="display: none;">
+                <div onclick="lastQuestion()" class="slide-rl-container">
+                    <img src="QuizappImg/left.png">
+                </div>
+                <div id="next-button" onclick="nextQuestion()" class="slide-rl-container" style="display: none;">
+                    <img src="QuizappImg/right.png">
+                </div>
+
+            </div>
+
+
+
+
         </div>
+
     </div>
 
 
