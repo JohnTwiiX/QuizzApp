@@ -128,8 +128,8 @@ body {
 }
 
 .answer-icon {
-    height: 50px;
-    width: 50px;
+    min-height: 50px;
+    min-width: 50px;
     background-color: rgb(128 128 128 / 50%);
     display: flex;
     justify-content: center;
@@ -259,5 +259,8 @@ body {
     }
     .trophy-img {
         display: none !important;
+    }
+    .answer-icon {
+        margin-right: 8px;
     }
 }
